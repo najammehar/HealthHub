@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <title>Services | HealthHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar resolution" id="navbar">
+            <div class="brand"><span><img src="logo.png" alt="" style="height: 30px;"></span> <span><span style="color: #FD6A00;">Health</span><span style="color: #1B6592;">Hub</span></span></div>
+            <button id="adminHome" class="btn nl-btn">Admin Home</button>
+        </nav>
+      </header>
+    <div class="container  center mb-1" style="height: 40vh; flex-direction: column;gap: 1.5rem;">
+        <div class="title-1 white">Services</div>
+    </div>
+    <h2 class="title-2 center white mb-1">Add/Update Services</h2>
+    <div class="resolution">
+        <div class="unit-buttons">
+            <span class="selected" id="addFormButton" data-form-type="add" data-form-name="Service">Add Service</span>
+            <span id="updateFormButton" data-form-type="update" data-form-name="Service">Update Service</span>
+        </div>
+    </div>
+    <div class="resolution center">  
+        <form class="form" id="addServiceForm" data-form-type="add" data-form-name="Service">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="serviceID">Service ID:</label>
+                    <input type="text" id="serviceID" name="serviceID" maxlength="4" placeholder="Service ID" required>
+                    <div id="serviceIDError" style="height: 2rem;margin-top: 1rem;"></div>
+                </div>
+            </div>
+
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="fullname">Service Name:</label>
+                    <input type="text" id="fullname" name="fullname" maxlength="30" placeholder="Service Name" required>
+                </div>
+                <div>
+                    <label for="costPerDay">Cost Per Day:</label>
+                    <input type="number" min="1" id="costPerDay" step="0.01" name="costPerDay" placeholder="Cost Per Day" required>
+                </div>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="serviceType">Service Type</label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="Clinical">Clinical</option>
+                        <option value="Emergency">Emergency</option>
+                        <option value="Support">Support</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn nl-btn" type="submit" id="addButton" style="width: 100%;">Add</button>
+        </form>
+        <form class="form" id="updateServiceForm" data-form-type="update" data-form-name="Service" style="display: none;">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="uServiceID">Service ID:</label>
+                    <input type="text" id="uServiceID" name="uServiceID" maxlength="4" placeholder="Service ID" required>
+                    <div id="uServiceIDError" style="height: 2rem;margin-top: 1rem;"></div>
+                </div>
+            </div>
+
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="uFullname">Service Name:</label>
+                    <input type="text" id="uFullname" name="uFullname" maxlength="30" placeholder="Service Name" required>
+                </div>
+                <div>
+                    <label for="uCostPerDay">Cost Per Day:</label>
+                    <input type="number" min="1" id="uCostPerDay" step="0.01" name="uCostPerDay" placeholder="Cost Per Day" required>
+                </div>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="uServiceType">Service Type</label>
+                    <select id="uServiceType" name="serviceType" required>
+                        <option value="Clinical">Clinical</option>
+                        <option value="Emergency">Emergency</option>
+                        <option value="Support">Support</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn nl-btn" type="submit" id="updateButton" style="width: 100%;">Update</button>
+        </form>
+    </div>
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526;">
+    <div class="resolution text-2 white1">HealthHub &copy; 2024. All rights reserved.</div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

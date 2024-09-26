@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <title>HealthHub</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar resolution" id="navbar">
+        <div class="brand">
+          <span><img src="logo.png" alt="" style="height: 30px" /></span>
+          <span
+            ><span style="color: #fd6a00">Health</span
+            ><span style="color: #1b6592">Hub</span></span
+          >
+        </div>
+      </nav>
+    </header>
+
+    <div
+      class="container center mb-1"
+      style="height: 40vh; flex-direction: column; gap: 1.5rem"
+    >
+      <div class="title-2 white">Welcome to HealthHub</div>
+      <div class="title-3 white">(Hospital Management System)</div>
+    </div>
+
+    <div class="resolution nl-display">
+      <div class="noticeboard title-3">
+        <div class="center mb-2"><img src="NoticeBoardtitle.png" alt="" /></div>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> ID cards
+          must be worn visibly at all times.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> Adhere
+          to uniform and hygiene protocols strictly.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> Report
+          shift changes or absences to your supervisor in advance.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> Follow
+          designated break times and ensure task coverage.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span>
+          Familiarize yourself with emergency exits and procedures.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> Maintain
+          patient confidentiality in all interactions.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span>
+          Double-check patient details before administering medication.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> Properly
+          dispose of medical waste in designated bins.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> Report
+          malfunctioning equipment to maintenance immediately.
+        </p>
+        <p
+          class="notice-p"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <span class="material-symbols-outlined white1"> check </span> Ensure
+          all documentation is accurate and submitted on time.
+        </p>
+      </div>
+      <div class="login-section">
+        <div class="unit-buttons">
+          <span type="button" id="adminFormButton" class="selected">Admin</span>
+          <span type="button" id="staffFormButton" class="disable">Staff</span>
+        </div>
+
+        <form class="form-login" id="adminForm">
+          <div class="mb-3">
+            <div>
+              <label for="Adminusername">Username</label>
+              <input
+                type="text"
+                id="Adminusername"
+                name="username"
+                maxlength="20"
+                placeholder="Username"
+                required
+              />
+              <div style="height: 2rem; margin-top: 1rem"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div>
+              <label for="Adminpassword">Password</label>
+              <input
+                type="password"
+                id="Adminpassword"
+                name="password"
+                maxlength="20"
+                placeholder="Password"
+                required
+              />
+              <div style="height: 2rem; margin-top: 1rem"></div>
+            </div>
+          </div>
+          <button
+            class="btn nl-btn"
+            type="button"
+            id="adminSubmitBtn"
+            style="width: 100%"
+          >
+            Login
+          </button>
+        </form>
+
+        <form class="form-login" id="staffForm" style="display: none">
+          <div class="mb-3 input-field">
+            <div>
+              <label for="Staffusername">Username</label>
+              <input
+                type="text"
+                id="Staffusername"
+                name="username"
+                maxlength="20"
+                placeholder="Username"
+                required
+              />
+              <div style="height: 2rem; margin-top: 1rem"></div>
+            </div>
+          </div>
+          <div class="mb-3 input-field">
+            <div>
+              <label for="Staffpassword">Password</label>
+              <input
+                type="password"
+                id="Staffpassword"
+                name="password"
+                maxlength="20"
+                placeholder="Password"
+                required
+              />
+              <div style="height: 2rem; margin-top: 1rem"></div>
+            </div>
+          </div>
+          <button
+            class="btn nl-btn"
+            type="button"
+            id="staffSubmitBtn"
+            style="width: 100%"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526">
+      <div class="resolution text-2 white1">
+        HealthHub &copy; 2024. All rights reserved.
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

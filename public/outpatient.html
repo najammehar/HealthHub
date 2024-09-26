@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>OutPatient | HealthHub</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar resolution" id="navbar">
+            <div class="brand"><span><img src="logo.png" alt="" style="height: 30px;"></span> <span><span style="color: #FD6A00;">Health</span><span style="color: #1B6592;">Hub</span></span></div>
+            <button id="staffHome" class="btn nl-btn">Staff Home</button>
+        </nav>
+    </header>
+    <div class="container center mb-1" style="height: 40vh; flex-direction: column; gap: 1.5rem;">
+        <div class="title-1 white">OutPatient</div>
+    </div>
+    <div class="title-2 white center mb-2">Add/Update InPatients</div>
+    <div class="resolution">
+        <div class="unit-buttons">
+            <span class="selected" id="addFormButton" data-form-type="add" data-form-name="OutPatient">Add</span>
+            <span id="updateFormButton" data-form-type="update" data-form-name="OutPatient">Update</span>
+        </div>
+    </div>
+
+    <div class="resolution center">
+        <form class="form" id="outpatientForm" data-form-type="add" data-form-name="OutPatient">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="patientid">Patient ID:</label>
+                    <input type="text" id="patientid" name="patientid" maxlength="4" placeholder="Patient ID" required>
+                    <div id="patientIDStatus" style="height: 2rem; margin-top: 1rem;"></div>
+                </div>
+            </div>
+            <label for="fname">Full Name:</label>
+            <div class="f-grid mb-2">
+                <input type="text" id="fname" name="fname" maxlength="20" placeholder="First Name" required>
+                <input type="text" id="lname" name="lname" maxlength="20" placeholder="Last Name" required>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="cnic_no">CNIC:</label>
+                    <input type="text" id="cnic_no" name="cnic_no" maxlength="13" placeholder="xxxxxxxxxxxxxx" required>
+                </div>
+                <div>
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="age">Age:</label>
+                    <input type="number" min="0" id="age" step="0.01" name="age" placeholder="Age" required>
+                </div>
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" maxlength="13" placeholder="Phone" required>
+                </div>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="doctorid">Assign Doctor:</label>
+                    <input type="text" id="doctorID" class="doctorid" maxlength="4" placeholder="Select Doctor" name="doctorid" required readonly>
+                    <dialog class="dialog" id="doctorDialog">
+                        <h2 class="center white1 title-3 mb-3">Select a Doctor</h2>
+                        <div class="mb-3 doctorList"></div>
+                        <div class="center close-btn" id="closeDialog">Close</div>
+                    </dialog>
+                </div>
+                <div>
+                    <label for="staffid">Staff:</label>
+                    <input type="text" id="staffID" class="staffid" maxlength="4" placeholder="Select Staff" name="staffid" required readonly>
+                    <dialog class="dialog" id="staffDialog">
+                        <h2 class="center white1 title-3 mb-3">Select a Staff Member</h2>
+                        <div class="mb-3 staffList"></div> <!-- Notice the use of class instead of id for staffList -->
+                        <button class="center close-btn" id="closeStaffDialog">Close</button>
+                    </dialog>
+                </div>
+            </div>
+            <div id="medicines">
+                <h3 class="title-3 white1 center mb-3">Medicines</h3>
+                <div class="bg">
+                    <div class="allmedicine">
+                        <div class="medicine">
+                            <div class="ms-details title-3 white1 mb-3">
+                                <span>#1</span>
+                                <span class="remove">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#E4E6EB">
+                                        <path d="M200-440v-80h560v80H200Z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="f-grid" style="margin-bottom: 2rem;">
+                                <div>
+                                    <label for="medicineid">Medicine:</label>
+                                    <input type="text" class="medicineid" placeholder="Select Medicine" name="medicineid[]" readonly>
+                                </div>
+                                <div>
+                                    <label for="quantity">Quantity:</label>
+                                    <input type="number" class="quantity" name="quantity[]">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-btn addMedicine">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#E4E6EB">
+                            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <dialog class="dialog" id="medicineDialog">
+                <h2>Select a Medicine</h2>
+                <div class="table-overflow">
+                    <div id="medicineList"></div>
+                </div>
+                <button class="center close-btn" id="closeMedicineDialog">Close</button>
+            </dialog>
+            
+            <button class="btn nl-btn" type="submit" id="addButton" style="width: 100%;">Add</button>
+        </form>
+
+        <form class="form" id="updateOutpatientForm" data-form-type="update" data-form-name="OutPatient">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="uadmissionno">Patient ID:</label>
+                    <input type="text" id="uadmissionno" name="uadmissionno" maxlength="4" placeholder="Patient ID" required>
+                    <div id="upatientIDStatus" style="height: 2rem; margin-top: 1rem;"></div>
+                </div>
+            </div>
+            <label for="ufname">Full Name:</label>
+            <div class="f-grid mb-2">
+                <input type="text" id="ufname" name="ufname" maxlength="20" placeholder="First Name" required>
+                <input type="text" id="ulname" name="ulname" maxlength="20" placeholder="Last Name" required>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="ucnic_no">CNIC:</label>
+                    <input type="text" id="ucnic_no" name="ucnic_no" maxlength="13" placeholder="xxxxxxxxxxxxxx" required>
+                </div>
+                <div>
+                    <label for="ugender">Gender:</label>
+                    <select id="ugender" name="ugender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="uage">Age:</label>
+                    <input type="number" min="0" id="uage" step="0.01" name="uage" placeholder="Age" required>
+                </div>
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="uphone" name="uphone" maxlength="13" placeholder="Phone" required>
+                </div>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="doctorid">Assign Doctor:</label>
+                    <input type="text" class="doctorid" id="udoctorid" maxlength="4" placeholder="Select Doctor" name="doctorid" required readonly>
+                    <dialog class="dialog" id="doctorDialog">
+                        <h2 class="center white1 title-3 mb-3">Select a Doctor</h2>
+                        <div class="mb-3 doctorList"></div>
+                        <div class="center close-btn" id="closeDoctorDialog">Close</div>
+                    </dialog>
+                </div>
+                <div>
+                    <label for="ustaffid">Staff:</label>
+                    <input type="text" id="ustaffid" class="staffid" maxlength="4" placeholder="Select Staff" name="staffid" required readonly>
+                    <dialog class="dialog" id="staffDialog">
+                        <h2 class="center white1 title-3 mb-3">Select a Staff Member</h2>
+                        <div class="mb-3 staffList"></div> <!-- Notice the use of class instead of id for staffList -->
+                        <button class="center close-btn" id="closeStaffDialog">Close</button>
+                    </dialog>
+                </div>
+            </div>
+            <div id="medicines">
+                <h3 class="title-3 white1 center mb-3">Medicines</h3>
+                <div class="bg">
+                    <div class="uallmedicine"></div>
+                    <div class="ms-btn uaddMedicine">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#E4E6EB">
+                            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        
+            <dialog class="dialog" id="umedicineDialog">
+                <h2>Select a Medicine</h2>
+                <div class="table-overflow">
+                    <div id="umedicineList"></div>
+                </div>
+                <button class="center close-btn" id="closeMedicineDialog">Close</button>
+            </dialog>
+        
+            <button class="btn nl-btn" type="submit" id="updateButton" style="width: 100%;">Update</button>
+        </form>
+        
+    </div>
+
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526;">
+        <div class="resolution text-2 white1">HealthHub &copy; 2024. All rights reserved.</div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/outpatient.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/inpatient.js"></script>
+    <script src="js/updateOutPatient.js"></script>
+</body>
+</html>

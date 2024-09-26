@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <title>Medicine Record | HealthHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar resolution" id="navbar">
+          <div class="brand"><span><img src="logo.png" alt="" style="height: 30px;"></span> <span><span style="color: #FD6A00;">Health</span><span style="color: #1B6592;">Hub</span></span></div>
+          <button id="adminHome" class="btn nl-btn">Admin Home</button>
+        </nav>
+      </header>
+    <div class="container  center mb-1" style="height: 40vh; flex-direction: column;gap: 1.5rem;">
+        <div class="title-1 white">Medicines</div>
+    </div>
+    <div class="resolution">
+        <label class="title-3 white" style="margin-bottom: 1rem; display: block;" for="searchInput">Search:</label>
+        <input class="mb-2" type="text" id="searchInput" name="searchInput" placeholder="Search by ID or Name">
+        <div class="filter">
+            <div class="title-3 white">Filter by:</div>
+        <div class="mb-3 radio-btn" id="buttons">
+            <button class="btn logout active" id="allMedicine">All</button>
+            <button class="btn logout" id="availableMedicine">Available</button>
+            <button class="btn logout" id="notAvailableMedicine">Not Available</button>
+            <button class="btn logout" id="discontinuedMedicine">Discontinued</button>
+        </div>
+        </div>
+        
+        <div class="table-container white1" id="medicineList"></div>
+        <div id="errorDisplay" class="hidden">No data available</div>
+    </div>
+    
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526;">
+        <div class="resolution text-2 white1">HealthHub &copy; 2024. All rights reserved.</div>
+    </footer>
+    <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E4E6EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/medicine.js"></script>
+</body>
+</html>

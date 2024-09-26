@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <title>Staff | HealthHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar resolution" id="navbar">
+          <div class="brand"><span><img src="logo.png" alt="" style="height: 30px;"></span> <span><span style="color: #FD6A00;">Health</span><span style="color: #1B6592;">Hub</span></span></div>
+          <button id="adminHome" class="btn nl-btn">Admin Home</button>
+        </nav>
+    </header>
+    <div class="container  center mb-1" style="height: 40vh; flex-direction: column;gap: 1.5rem;">
+        <div class="title-1 white">Staff</div>
+    </div>
+    <h2 class="title-2 center white mb-1">Add/Update Staff</h2>
+    <div class="resolution">
+        <div class="unit-buttons">
+            <span class="selected" id="addFormButton" data-form-type="add" data-form-name="Staff">Add Staff Member</span>
+            <span id="updateFormButton" data-form-type="update" data-form-name="Staff">Update Staff Member</span>
+        </div>
+    </div>
+
+    <div class="resolution center">  
+        <form class="form" id="addStaffMemberForm" data-form-type="add" data-form-name="Staff">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="staff_id">Staff ID:</label>
+                    <input type="text" id="staff_id" name="staff_id" maxlength="4" placeholder="Staff ID" required>
+                    <div id="StaffIDError" style="height: 2rem;margin-top: 1rem;"></div>
+                </div>
+            </div>
+
+            <label for="fname">Full Name:</label>
+            <div class="f-grid mb-2">
+                <input type="text" id="fname" name="fname" maxlength="20" placeholder="First Name" required>
+                <input type="text" id="lname" name="lname" maxlength="20" placeholder="Last Name" required>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="designation">Designation:</label>
+                    <input type="text" id="designation" name="designation" maxlength="30" placeholder="Designation" required>
+                </div>
+                <div>
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="salary">Salary:</label>
+                    <input type="number" min="5000" max="1000000" id="salary" step="0.01" name="salary" placeholder="Salary" required>
+                </div>
+                <div>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="Active">Active</option>
+                        <option value="Resigned">Resigned</option>
+                        <option value="Retired">Retired</option>
+                        <option value="Deceased">Deceased</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn nl-btn" type="submit" id="addButton" style="width: 100%;">Add</button>
+        </form>
+
+        <form class="form" id="updateStaffMemberForm" data-form-type="update" data-form-name="Staff" style="display: none;">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="uStaffID">Staff ID:</label>
+                    <input type="text" id="uStaffID" name="uStaffID" maxlength="4" placeholder="Staff ID" required>
+                    <div id="uStaffIDError" style="height: 2rem;margin-top: 1rem;"></div>
+                </div>
+            </div>
+
+            <label for="uFname">Full Name:</label>
+            <div class="f-grid mb-2">
+                <input type="text" id="uFname" name="uFname" maxlength="20" placeholder="First Name" required>
+                <input type="text" id="uLname" name="uLname" maxlength="20" placeholder="Last Name" required>
+            </div>
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="uDesignation">Designation:</label>
+                    <input type="text" id="uDesignation" name="uDesignation" maxlength="30" placeholder="Designation" required>
+                </div>
+                <div>
+                    <label for="uGender">Gender:</label>
+                    <select id="uGender" name="uGender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="f-grid mb-2">
+                <div>
+                    <label for="uSalary">Salary:</label>
+                    <input type="number" min="5000" max="1000000" id="uSalary" step="0.01" name="uSalary" placeholder="Salary" required>
+                </div>
+                <div>
+                    <label for="uStatus">Status:</label>
+                    <select id="uStatus" name="uStatus" required>
+                        <option value="Active">Active</option>
+                        <option value="Resigned">Resigned</option>
+                        <option value="Retired">Retired</option>
+                        <option value="Deceased">Deceased</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn nl-btn" type="submit" id="updateButton" style="width: 100%;">Update</button>
+        </form>
+    </div>
+
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526;">
+        <div class="resolution text-2 white1">HealthHub &copy; 2024. All rights reserved.</div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/addStaffMember.js"></script>
+</body>
+</html>

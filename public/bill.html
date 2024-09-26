@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Generate Bill | HealthHub</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar resolution" id="navbar">
+            <div class="brand"><span><img src="logo.png" alt="" style="height: 30px;"></span> <span><span style="color: #FD6A00;">Health</span><span style="color: #1B6592;">Hub</span></span></div>
+            <button id="staffHome" class="btn nl-btn">Staff Home</button>
+        </nav>
+    </header>
+    <div class="container center mb-1" style="height: 40vh; flex-direction: column; gap: 1.5rem;">
+        <div class="title-1 white">Bills</div>
+    </div>
+    <h2 class="title-2 center white mb-1">Generate In/OutPatient Bills</h2>
+    <div class="resolution">
+        <div class="unit-buttons">
+            <span class="selected" id="addFormButton" data-form-type="add" data-form-name="Bill">InPatient Bill</span>
+            <span id="updateFormButton" data-form-type="update" data-form-name="Bill">OutPatient Bill</span>
+        </div>
+    </div>
+    <div class="resolution center">
+        <form class="form" id="InPatientBillForm" data-form-type="add" data-form-name="Bill">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="patientid">Patient ID:</label>
+                    <input type="text" id="patientid" name="patientid" maxlength="4" placeholder="Patient ID" required>
+                    <div id="PatientIDError" style="height: 1rem; margin-top: 1rem;"></div>
+                </div>
+            </div>
+            <button class="btn nl-btn" type="button" id="InPatientBillBtn" style="width: 100%;">Generate Bill</button>
+        </form>
+        <form class="form" id="OutPatientBillForm" data-form-type="update" data-form-name="Bill">
+            <div class="f-grid mb-3">
+                <div>
+                    <label for="opatientid">Patient ID:</label>
+                    <input type="text" id="opatientid" name="opatientid" maxlength="4" placeholder="Patient ID" required>
+                    <div id="oPatientIDError" style="height: 2rem; margin-top: 1rem;"></div>
+                </div>
+            </div>
+            <button class="btn nl-btn" type="button" id="OutPatientBillBtn" style="width: 100%;">Generate Bill</button>
+        </form>
+    </div>
+    <div class="resolution center">
+        <div class="form bill-details mt-3" id="billDetails">
+            
+        </div>
+    </div>
+    <dialog id="dialog-box"></dialog>
+
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526;">
+        <div class="resolution text-2 white1">HealthHub &copy; 2024. All rights reserved.</div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bill.js"></script>
+</body>
+</html>

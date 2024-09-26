@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <title>Staff | HealthHub</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar resolution" id="navbar">
+          <div class="brand"><span><img src="logo.png" alt="" style="height: 30px;"></span> <span><span style="color: #FD6A00;">Health</span><span style="color: #1B6592;">Hub</span></span></div>
+          <button id="logout-btn" class="btn logout">Logout <img src="logout1.svg" alt=""></button>
+        </nav>
+      </header>
+    <div class="container  center mb-1" style="height: 40vh; flex-direction: column;gap: 1.5rem;">
+        <div class="title-1 white">Staff</div>
+        
+    </div>
+  <!-- CARDS  -->
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">InPatients</div>
+        <div class="cards mb-2">
+            <div class="card hide" style="border-left: 0.5rem solid #1B6592;" onclick="navigateToPage('inpatient')">
+                <div ><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1B6592"><path d="M140-80q-24.75 0-42.37-17.63Q80-115.25 80-140v-680q0-24.75 17.63-42.38Q115.25-880 140-880h400q24.75 0 42.38 17.62Q600-844.75 600-820v680q0 24.75-17.62 42.37Q564.75-80 540-80H140Zm0-445q20-17 45.5-26t54.5-9h200q29 0 54.5 9t45.5 26v-295H140v295Zm199.91-85q-28.91 0-49.41-20.59-20.5-20.59-20.5-49.5t20.59-49.41q20.59-20.5 49.5-20.5t49.41 20.59q20.5 20.59 20.5 49.5t-20.59 49.41q-20.59 20.5-49.5 20.5ZM780-340 640-480l140-140 42 42-67 68h165v60H755l67 68-42 42ZM140-140h400v-260q0-42-29-71t-71-29H240q-42 0-71 29t-29 71v260Zm170-70h60v-80h80v-60h-80v-80h-60v80h-80v60h80v80Zm-170 70h400-400Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Add/Update</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can add Inpatient to record or modify the existing Inpatient</div>
+                    <span class="card-btn" style="color: #1B6592;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+
+
+            <div class="card hide" style="border-left: 0.5rem solid palegreen ;" onclick="navigateToPage('inpatient_record')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="palegreen"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View InPatient</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all the InPatient records who are working in hospital</div>
+                    <span class="card-btn" style="color: palegreen;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">OutPatients</div>
+        <div class="cards mb-2">
+            <div class="card hide" style="border-left: 0.5rem solid #FD6A00;" onclick="navigateToPage('outpatient')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FD6A00"><path d="M40-120v-720h560v720H371v-170H270v170H40Zm60-60h110v-170h221v170h109v-600H100v600Zm110-270h60v-60h-60v60Zm0-160h60v-60h-60v60Zm160 160h60v-60h-60v60Zm0-160h60v-60h-60v60Zm424 256-42-42 53-54H640v-60h165l-53-54 42-42 126 126-126 126ZM210-180v-170h221v170-170H210v170Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Add/Update</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can add OutPatient to record or modify the existing OutPatient</div>
+                    <span class="card-btn" style="color: #FD6A00;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+            <div class="card hide" style="border-left: 0.5rem solid brown ;" onclick="navigateToPage('outpatient_record')">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="brown"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View OutPatient</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all OutPatient records that the hospital supply to patient</div>
+                    <span class="card-btn" style="color: brown;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">Bills</div>
+        <div class="cards mb-2">
+            <div class="card hide" style="border-left: 0.5rem solid palegreen;" onclick="navigateToPage('generate_bills')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="palegreen"><path d="M120-81v-798l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v798l-60-60-60 60-60-60-60 60-60-60-60 60-60-59.85L360-81l-60-59.85L240-81l-60-59.85L120-81Zm117-215h490v-60H237v60Zm0-154h490v-60H237v60Zm0-155h490v-60H237v60Zm-57 423h600v-596H180v596Zm0-596v596-596Z"/></svg></div>     
+                    <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Generate Bills</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can generate both In/OutPatient Bills</div>
+                    <span class="card-btn" style="color: palegreen;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+            <div class="card hide" style="border-left: 0.5rem solid #1B6592;" onclick="navigateToPage('Bills_record')">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1B6592"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View Bills</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all the In/OutPatient Bills</div>
+                    <span class="card-btn" style="color: #1B6592;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526;">
+        <div class="resolution text-2 white1">HealthHub &copy; 2024. All rights reserved.</div>
+    </footer>
+    <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top"><i data-feather="chevron-up"></i></button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        if (!sessionStorage.getItem('loggedIn')) {
+          window.location.href = 'home';
+        }
+    
+        $('#logout-btn').click(function() {
+          $.post('http://localhost:4000/logout', function() {
+            sessionStorage.removeItem('loggedIn');
+            window.location.href = 'home';
+          });
+        });
+      </script>
+    <script src="js/script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

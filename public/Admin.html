@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <title>Admin | HealthHub</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar resolution" id="navbar">
+          <div class="brand"><span><img src="logo.png" alt="" style="height: 30px;"></span> <span><span style="color: #FD6A00;">Health</span><span style="color: #1B6592;">Hub</span></span></div>
+          <button id="logout-btn" class="btn logout">Logout <img src="logout1.svg" alt=""></button>
+        </nav>
+      </header>
+    <div class="container  center mb-1" style="height: 40vh; flex-direction: column;gap: 1.5rem;">
+        <div class="title-1 white">Admin</div>
+
+    </div>
+  <!-- CARDS  -->
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">Doctors</div>
+        <div class="cards mb-2">
+            <div class="card hide" style="border-left: 0.5rem solid #1B6592;" onclick="navigateToPage('add_update_docotor')">
+                <div ><img src="stethoscope_icon.svg" alt="SVG Image"></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Add/Update</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can add doctor to record or modify the existing doctor</div>
+                    <span class="card-btn" style="color: #1B6592;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+
+
+            <div class="card hide" style="border-left: 0.5rem solid palegreen ;" onclick="navigateToPage('docotor_record')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="palegreen"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View Doctors</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all the doctors records who are working in hospital</div>
+                    <span class="card-btn" style="color: palegreen;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">Medicines</div>
+        <div class="cards mb-2">
+            <div class="card hide" style="border-left: 0.5rem solid #FD6A00;" onclick="navigateToPage('add_update_medicine')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FD6A00"><path d="m302.69-80-45.38-34.23v-183.08h-74.62q-18.91 0-32.15-13.23-13.23-13.24-13.23-32.15v-334.62H120q-9.64 0-16.17-6.58-6.52-6.58-6.52-16.31 0-9.72 6.52-16.11 6.53-6.38 16.17-6.38h137.31v-101.93H220q-9.64 0-16.17-6.58-6.52-6.58-6.52-16.3 0-9.73 6.52-16.11Q210.36-870 220-870h120q9.64 0 16.17 6.58 6.52 6.58 6.52 16.31 0 9.73-6.52 16.11-6.53 6.38-16.17 6.38h-37.31v101.93H440q9.64 0 16.17 6.58 6.52 6.58 6.52 16.31 0 9.72-6.52 16.11-6.53 6.38-16.17 6.38h-17.31v334.62q0 18.91-13.23 32.15-13.24 13.23-32.15 13.23h-74.62V-80Zm-120-262.69h194.62v-90.77H290q-6.62 0-11.58-4.98t-4.96-11.61q0-6.64 4.96-11.57 4.96-4.92 11.58-4.92h87.31v-86.92H290q-6.62 0-11.58-4.98t-4.96-11.61q0-6.64 4.96-11.57 4.96-4.92 11.58-4.92h87.31v-90.77H182.69v334.62ZM590-90q-18.91 0-32.15-13.24-13.23-13.23-13.23-32.14v-274.47q0-30.68 9.73-47.84 9.73-17.16 21.96-30.39 16.31-17.3 22.31-27.92 6-10.62 6-24v-37.31h-17.31q-9.65 0-16.17-6.58-6.52-6.58-6.52-16.31 0-9.72 6.7-16.11 6.7-6.38 15.99-6.38h200q9.64 0 16.17 6.58 6.52 6.58 6.52 16.31 0 9.72-6.52 16.11-6.53 6.38-16.17 6.38H770v37.26q0 12.82 6.92 24.67 6.93 11.84 23.23 29.15 12.62 13.23 21.23 29.19 8.62 15.96 8.62 47.05v274.61q0 18.91-13.24 32.14Q803.53-90 784.62-90H590Zm0-289.23h194.62v-30.81q0-19.29-9.81-33.7-9.81-14.41-22.19-29.03-13.58-16.57-20.79-31.48-7.21-14.9-7.21-35.75v-37.31H650V-540q0 20.12-6.96 35.02-6.96 14.9-20.43 31.59-12.48 14.61-22.55 29.37Q590-429.25 590-409.85v30.62Zm0 120h194.62v-86.92H590v86.92Zm0 123.85h194.62v-90.77H590v90.77Zm0-123.85h194.62H590Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Add/Update</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can add medicine to record or modify the existing medicine</div>
+                    <span class="card-btn" style="color: #FD6A00;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+            <div class="card hide" style="border-left: 0.5rem solid brown ;" onclick="navigateToPage('medicine_record')">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="brown"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View Medicines</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all medicine records that the hospital supply to patient</div>
+                    <span class="card-btn" style="color: brown;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">Services</div>
+        <div class="cards mb-2">
+            <div class="card hide" style="border-left: 0.5rem solid palegreen;" onclick="navigateToPage('add_update_services')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="palegreen"><path d="M157.69-100q-23.53 0-40.61-17.08T100-157.69v-484.62q0-23.53 17.08-40.61T157.69-700H340v-82.3q0-23.53 17.08-40.62Q374.16-840 397.69-840h164.62q23.53 0 40.61 17.08Q620-805.83 620-782.3v82.3h182.31q23.53 0 40.61 17.08T860-642.31v484.62q0 23.53-17.08 40.61T802.31-100H157.69Zm0-45.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84ZM385.39-700h189.22v-82.3q0-4.62-3.84-8.47-3.85-3.84-8.46-3.84H397.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.47v82.3Zm-240 554.61V-654.61-145.39Zm311.92-231.92v120h45.38v-120h120v-45.38h-120v-120h-45.38v120h-120v45.38h120Z"/></svg></div>     
+                    <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Add/Update</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can add service record or modify the existing services</div>
+                    <span class="card-btn" style="color: palegreen;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+            <div class="card hide" style="border-left: 0.5rem solid #1B6592;" onclick="navigateToPage('services_record')">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1B6592"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View Services</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all the services provided by the provided by the hospital to patients</div>
+                    <span class="card-btn" style="color: #1B6592;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">Staff</div>
+        <div class="cards mb-2">
+            <div class="card hide" style="border-left: 0.5rem solid #6EC1E4;" onclick="navigateToPage('add_update_staff')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#6EC1E4 "><path d="M732.31-410v-127.31H605v-45.38h127.31V-710h45.38v127.31H905v45.38H777.69V-410h-45.38ZM360-492.92q-57.75 0-95.22-37.47-37.47-37.48-37.47-95.42 0-57.94 37.47-95.22T360-758.31q57.75 0 95.22 37.28t37.47 95.22q0 57.94-37.47 95.42-37.47 37.47-95.22 37.47ZM60-187.69v-75.93q0-30 15.96-55.03 15.96-25.04 45.5-37.89 68.85-30.31 125.05-43.42 56.2-13.12 113.3-13.12 57.11 0 113.19 13.12 56.08 13.11 124.92 43.42 29.54 13.85 45.81 38.39Q660-293.62 660-263.62v75.93H60Zm45.39-45.39h509.22v-30.54q0-15.61-9.57-29.92-9.58-14.31-26.12-22.46-64.07-29.92-113.34-40.81-49.26-10.88-105.58-10.88t-106.08 10.88Q204.15-345.92 140.46-316q-16.92 8.15-26 22.46-9.07 14.31-9.07 29.92v30.54ZM360-538.31q37.46 0 62.38-24.92 24.93-24.92 24.93-62.38 0-37.47-24.93-62.39-24.92-24.92-62.38-24.92T297.62-688q-24.93 24.92-24.93 62.39 0 37.46 24.93 62.38 24.92 24.92 62.38 24.92Zm0-87.3Zm0 392.53Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Add/Update</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can add staff record or modify the details of existing staff</div>
+                    <span class="card-btn" style="color: #6EC1E4;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+            <div class="card hide" style="border-left: 0.5rem solid #FD6A00;" onclick="navigateToPage('staff_record')">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FD6A00"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View Record</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all the staff records who are working in hospital</div>
+                    <span class="card-btn" style="color: #FD6A00;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resolution card-pack">
+        <div class="title-2 center white mb-2">Wards</div>
+        <div class="cards mb-1">
+            <div class="card hide" style="border-left: 0.5rem solid brown;" onclick="navigateToPage('add_update_ward')">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="brown"><path d="M125-860h73.66q12.54 0 20.79 8.29 8.24 8.3 8.24 20.56V-100q-19.92-10.31-32.65-23.46-12.73-13.16-12.73-34.23v-656.92H125q-9.29 0-15.99-6.71-6.7-6.71-6.7-16.31 0-9.6 6.7-15.98Q115.71-860 125-860Zm230.39 760q-23.5 0-40.6-17.1-17.1-17.09-17.1-40.59v-644.62q0-23.5 17.1-40.59 17.1-17.1 40.6-17.1H720q23.5 0 40.59 17.1 17.1 17.09 17.1 40.59v644.62q0 23.5-17.1 40.59Q743.5-100 720-100H355.39Zm-12.31-403.46q18.46-17.38 42.54-26.96Q409.7-540 437.69-540h200q28 0 52.08 9.58t42.54 26.96v-298.85q0-5.38-3.46-8.84-3.47-3.46-8.85-3.46H355.39q-5.39 0-8.85 3.46t-3.46 8.84v298.85Zm194.49-103.85q-26.19 0-44.38-18.31T475-670.12q0-26.19 18.31-44.38t44.5-18.19q26.19 0 44.38 18.31t18.19 44.5q0 26.19-18.31 44.38t-44.5 18.19ZM355.39-145.39H720q5.38 0 8.85-3.46 3.46-3.46 3.46-8.84V-400q0-39.78-27.42-67.2-27.42-27.41-67.2-27.41h-200q-39.78 0-67.19 27.41-27.42 27.42-27.42 67.2v242.31q0 5.38 3.46 8.84t8.85 3.46ZM515-217.31h45.38v-80h80v-45.38h-80v-80H515v80h-80v45.38h80v80Zm-159.61 71.92H343.08h389.23-376.92Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">Add/Update</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can add wards record or modify the details of existing wards</div>
+                    <span class="card-btn" style="color: brown;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+            <div class="card hide" style="border-left: 0.5rem solid palegreen;" onclick="navigateToPage('ward_record')">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="palegreen"><path d="M279.95-412.77q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm0-160q11.36 0 19.32-7.91 7.96-7.91 7.96-19.27t-7.91-19.32q-7.91-7.96-19.27-7.96t-19.32 7.91q-7.96 7.91-7.96 19.27t7.91 19.32q7.91 7.96 19.27 7.96Zm82.36 155.46H710v-45.38H362.31v45.38Zm0-160H710v-45.38H362.31v45.38Zm-15 437.31v-80H157.69q-23.53 0-40.61-17.08T100-277.69v-484.62q0-23.53 17.08-40.61T157.69-820h644.62q23.53 0 40.61 17.08T860-762.31v484.62q0 23.53-17.08 40.61T802.31-220H612.69v80H347.31ZM157.69-265.39h644.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84H157.69q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm-12.3 0V-774.61-265.39Z"/></svg></div>
+                <div class="card-content">
+                    <div class="title-3 white1" style="margin-bottom: 1rem;">View Wards</div>
+                    <div class="text-2" style="margin-bottom: 1rem;">Here you can view all the wards records which are in hospital</div>
+                    <span class="card-btn" style="color: palegreen;">Click Here<span class="material-symbols-outlined">chevron_right</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    dialog
+    <footer class="center container mt-1" style="height: 15vh; background-color: #242526;">
+        <div class="resolution text-2 white1">HealthHub &copy; 2024. All rights reserved.</div>
+    </footer>
+    <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top"><i data-feather="chevron-up"></i></button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        if (!sessionStorage.getItem('loggedIn')) {
+          window.location.href = 'home';
+        }
+    
+        $('#logout-btn').click(function() {
+          $.post('http://localhost:4000/logout', function() {
+            sessionStorage.removeItem('loggedIn');
+            window.location.href = 'home';
+          });
+        });
+      </script>
+    <script src="js/script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
